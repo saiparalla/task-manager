@@ -24,10 +24,9 @@ public class TaskService {
 
     Logger log=LogManager.getLogger(TaskService.class);
 
+    @Autowired
     TaskRepo repo;
-    TaskService(TaskRepo repo) {
-        this.repo = repo;
-    }
+    
     @Autowired
     UserRepo userRepo;
 

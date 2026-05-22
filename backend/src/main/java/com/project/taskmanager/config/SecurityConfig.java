@@ -20,7 +20,7 @@ public class SecurityConfig {
         return http
                     .csrf(csrf->csrf.disable())
                     .authorizeHttpRequests(req -> 
-                        req.requestMatchers("/register","/login","/verify-otp").permitAll()
+                        req.requestMatchers("/register","/login","/verify-otp","/swagger-ui/**","/v3/api-docs/**").permitAll()
                         .anyRequest().authenticated())
                     .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                     .httpBasic(Customizer.withDefaults())
